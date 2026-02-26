@@ -1,0 +1,38 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Vérification{% endblock %}
+{% block header %}Vérification Administrative{% endblock %}
+
+{% block content %}
+
+<form method="POST" class="verify-form">
+    <input type="text" name="code" placeholder="Entrer le code du ticket" required>
+    <button type="submit">Vérifier</button>
+</form>
+
+{% if message == "introuvable" %}
+    <div class="alert danger">
+        Ticket introuvable
+    </div>
+{% endif %}
+
+{% if ticket %}
+<div class="ticket-card">
+
+    <h3>Informations du ticket</h3>
+
+    <p><strong>Nom :</strong> {{ ticket.nom }}</p>
+    <p><strong>Matricule :</strong> {{ ticket.matricule }}</p>
+    <p><strong>Code :</strong> {{ ticket.code }}</p>
+    <p><strong>Statut :</strong> 
+        <span class="status {{ ticket.status }}">
+            {{ ticket.status }}
+        </span>
+    </p>
+    <p><strong>Date :</strong> {{ ticket.date.strftime("%d/%m/%Y %H:%M") }}</p>
+    <p><strong>Expiration :</strong> {{ ticket.expiration.strftime("%d/%m/%Y %H:%M") }}</p>
+
+</div>
+{% endif %}
+
+{% endblock %}

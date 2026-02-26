@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contrôle Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="verify-page">
+
+    <div class="verify-container">
+
+        <div class="verify-header">
+            <h1>Contrôle de Ticket</h1>
+            <p>Entrez le code pour vérifier l'accès</p>
+        </div>
+
+        <form method="POST" class="verify-form">
+            <input type="text" name="code" placeholder="Entrer le code du ticket" required>
+            <button type="submit">Vérifier</button>
+        </form>
+
+        {% if resultat %}
+            <div class="verify-result {{ resultat }}">
+
+                {% if resultat == "valide" %}
+                    <div class="result-icon">✔</div>
+                    <div class="result-text">Accès autorisé</div>
+
+                {% elif resultat == "utilise" %}
+                    <div class="result-icon">⚠</div>
+                    <div class="result-text">Ticket déjà utilisé</div>
+
+                {% elif resultat == "expire" %}
+                    <div class="result-icon">⛔</div>
+                    <div class="result-text">Ticket expiré</div>
+
+                {% elif resultat == "introuvable" %}
+                    <div class="result-icon">✖</div>
+                    <div class="result-text">Ticket introuvable</div>
+
+                {% endif %}
+
+            </div>
+        {% endif %}
+
+    </div>
+
+    <a href="{{ url_for('home') }}" class="btn-retour">
+        ← Retour à l'accueil
+    </a>
+
+</div>
+
+</body>
+</html>

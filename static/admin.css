@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f1f5f9;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.admin-navbar {
+    background-color: #1e3a8a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-subtitle {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.logout {
+    color: #fca5a5;
+}
+
+.logout:hover {
+    color: #ffffff;
+}
+
+/* ========================= */
+/* CONTENU */
+/* ========================= */
+
+.admin-container {
+    padding: 40px;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.admin-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+
+/* ========================= */
+/* DASHBOARD */
+/* ========================= */
+
+.dashboard-date {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-left: 5px solid #1e3a8a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.card-value.valid {
+    color: #16a34a;
+}
+
+.card-value.used {
+    color: #dc2626;
+}
+
+.card-value.expired {
+    color: #f59e0b;
+}
+
+/* ========================= */
+/* REPERTOIRE */
+/* ========================= */
+
+.repertoire-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.repertoire-filters input,
+.repertoire-filters select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+}
+
+.repertoire-filters button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.repertoire-filters button:hover {
+    background-color: #2563eb;
+}
+
+.result-count {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #64748b;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background-color: #e2e8f0;
+    padding: 10px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.admin-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.status.valide {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.status.utilise {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.status.expire {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* ========================= */
+/* VERIFICATION ADMIN */
+/* ========================= */
+
+.verify-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.verify-form input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+}
+
+.verify-form button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.verify-form button:hover {
+    background-color: #2563eb;
+}
+
+.ticket-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 400px;
+}
+
+.alert.danger {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}

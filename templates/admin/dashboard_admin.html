@@ -1,0 +1,36 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Tableau de bord{% endblock %}
+{% block header %}Tableau de bord{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-date">
+    Situation au {{ date_du_jour }}
+</div>
+
+<div class="dashboard-cards">
+
+    <div class="card">
+        <h3>Total des tickets</h3>
+        <p class="card-value">{{ total }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Tickets valides</h3>
+        <p class="card-value valid">{{ valides }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Tickets utilisés</h3>
+        <p class="card-value used">{{ utilises }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Tickets expirés</h3>
+        <p class="card-value expired">{{ expires }}</p>
+    </div>
+
+</div>
+
+{% endblock %}

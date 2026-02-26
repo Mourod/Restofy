@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Achat Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="achat-page">
+
+    <div class="achat-card">
+
+        <h2>Achat de ticket</h2>
+
+        <p class="achat-description">
+            Complétez vos informations pour acheter votre ticket de restauration.
+        </p>
+
+        <div class="price-badge">
+            150 F
+        </div>
+
+        <form method="POST">
+
+            <div class="input-group">
+                <input type="text" name="nom" required>
+                <label>Nom complet</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="matricule" required>
+                <label>Matricule</label>
+            </div>
+
+            <button type="submit" class="btn-pay">
+                Payer 150 F
+            </button>
+
+        </form>
+
+        <a href="javascript:history.back()" class="btn-retour">
+            ← Retour
+        </a>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

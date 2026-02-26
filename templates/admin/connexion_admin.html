@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion Administration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_login.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="login-header">
+            <h2>RESTOFY</h2>
+            <p>Portail Administration</p>
+        </div>
+
+        {% if erreur %}
+        <div class="login-error">
+            {{ erreur }}
+        </div>
+        {% endif %}
+
+        <form method="POST">
+
+            <label>Nom d'utilisateur</label>
+            <input type="text" name="username" required>
+
+            <label>Mot de passe</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Se connecter</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

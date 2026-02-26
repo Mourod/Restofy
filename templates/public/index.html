@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plateforme Tickets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="hero">
+
+    <div class="hero-content">
+        <h1>
+            Plateforme officielle d'achat<br>
+            de tickets de restauration
+        </h1>
+
+        <p class="hero-sub">
+            Achetez votre ticket en ligne rapidement,
+            simplement et en toute sécurité.
+        </p>
+
+        <a href="{{ url_for('achat') }}" class="btn-main">
+            Acheter un ticket
+        </a>
+
+        <a href="{{ url_for('verification') }}" class="btn-main">
+            Vérifier un ticket
+        </a>
+
+    </div>
+
+    <div class="hero-info">
+        <div class="info-card">
+            ⚡ Paiement rapide
+        </div>
+
+        <div class="info-card">
+            🔐 Ticket sécurisé
+        </div>
+
+        <div class="info-card">
+            📱 Vérification instantanée
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+

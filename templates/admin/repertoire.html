@@ -1,0 +1,56 @@
+{% extends "admin/base_admin.html" %}
+
+{% block title %}Répertoire{% endblock %}
+{% block header %}Répertoire des étudiants{% endblock %}
+
+{% block content %}
+
+<form method="GET" class="repertoire-filters">
+
+    <input type="text" name="search"
+           placeholder="Rechercher nom ou matricule"
+           value="{{ search or '' }}">
+
+    <select name="statut">
+        <option value="tous">Tous les statuts</option>
+        <option value="valide" {% if statut == "valide" %}selected{% endif %}>Valide</option>
+        <option value="utilise" {% if statut == "utilise" %}selected{% endif %}>Utilisé</option>
+        <option value="expire" {% if statut == "expire" %}selected{% endif %}>Expiré</option>
+    </select>
+
+    <button type="submit">Filtrer</button>
+
+</form>
+
+<p class="result-count">
+    {{ tickets|length }} résultat(s)
+</p>
+
+<table class="admin-table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Matricule</th>
+            <th>Code</th>
+            <th>Statut</th>
+            <th>Date</th>
+            <th>Expiration</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.nom }}</td>
+            <td>{{ ticket.matricule }}</td>
+            <td>{{ ticket.code }}</td>
+            <td class="status {{ ticket.status }}">
+                {{ ticket.status }}
+            </td>
+            <td>{{ ticket.date.strftime("%d/%m/%Y %H:%M") }}</td>
+            <td>{{ ticket.expiration.strftime("%d/%m/%Y %H:%M") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

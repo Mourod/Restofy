@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="ticket-wrapper">
+
+    <div class="ticket-card">
+
+        <div class="ticket-header">
+            <div class="ticket-badge">TICKET VALIDE</div>
+            <div class="ticket-code">{{ code }}</div>
+        </div>
+
+        <div class="ticket-body">
+
+            <div class="ticket-section">
+                <h4>Informations apprenant</h4>
+
+                <div class="info-row">
+                    <span>Nom</span>
+                    <strong>{{ nom }}</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Matricule</span>
+                    <strong>{{ matricule }}</strong>
+                </div>
+            </div>
+
+            <div class="ticket-section">
+                <h4>Validité</h4>
+
+                <div class="info-row">
+                    <span>Paiement</span>
+                    <strong>{{ heure_paiement }}</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Expiration</span>
+                    <strong class="expiration">{{ expiration }}</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="javascript:history.back()" class="btn-retour">
+        ← Retour
+    </a>
+
+</div>
+
+</body>
+</html>

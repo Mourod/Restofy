@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Administration{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="admin-navbar">
+    <div class="nav-left">
+        <span class="logo">RESTOFY</span>
+        <span class="nav-subtitle">Administration</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="{{ url_for('dashboard_admin') }}">Tableau de bord</a>
+        <a href="{{ url_for('repertoire') }}">Répertoire</a>
+        <a href="{{ url_for('verification_admin') }}">Vérification</a>
+        <a href="{{ url_for('logout') }}" class="logout">Déconnexion</a>
+    </div>
+</nav>
+
+<!-- CONTENU -->
+<div class="admin-container">
+    <h1 class="page-title">{% block header %}{% endblock %}</h1>
+
+    <div class="admin-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
